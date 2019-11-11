@@ -1,0 +1,16 @@
+<h1>Games#new</h1>
+<% @letters.each do |letter| %>
+<%= letter %>
+<% end %>
+
+<form action="/score" method="post">
+<label for="word">"What's your best word?"</label>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="Your best word">
+  <input type="hidden" name="letters" value=<%= @letters.join %>>
+
+  <input type="submit">
+</form>
+
+<!-- <p>Find me in app/views/games/new.html.erb</p>
+ -->
